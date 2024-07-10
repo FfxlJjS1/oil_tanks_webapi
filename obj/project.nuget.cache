@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nIy+wzaJxCQEeSZ9dW4hnoV9uYyksdNhBI4UxQhxzPhT/6D0gAOqnKdp8/enzToUFcr/AQ/4WTfIukZiJGZapg==",
+  "dgSpecHash": "fytDOCv+GbIKlSEt5CRMtBr/sQnK0VQRQ2EocDhz6fX+2VjtKEgM6LL/9npGYWSRTLzczU37G+uL6tYlODqp3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Khanov\\Desktop\\Projects\\TransformToMicroservice\\OilTanks\\BackendOfSite\\oil_tanks_webapi.csproj",
+  "projectFilePath": "C:\\Users\\Khanov\\Desktop\\Projects\\temp\\Internship\\oil_tanks_webapi\\oil_tanks_webapi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Khanov\\.nuget\\packages\\confluent.kafka\\2.4.0\\confluent.kafka.2.4.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Khanov\\.nuget\\packages\\librdkafka.redist\\2.4.0\\librdkafka.redist.2.4.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.0\\microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
@@ -31,6 +33,7 @@
     "C:\\Users\\Khanov\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\Khanov\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Khanov\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
