@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
 using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using BackendOfSite.Kafka;
 
 namespace BackendOfSite.Controllers
 {
@@ -21,6 +22,7 @@ namespace BackendOfSite.Controllers
 
         readonly string[] oilTypes = { "Девонская", "Сернистая" };
         private List<SelectCister> selectCisterns = new List<SelectCister>();
+        private KafkaClient kafka_client = new KafkaClient("kafka:9092", KafkaClient.KafkaClientType.Producer);
 
         public CalculatorController(DbCisternContext context)
         {
@@ -108,12 +110,16 @@ namespace BackendOfSite.Controllers
         [HttpGet("GetProductParks")]
         public IActionResult GetProductParks()
         {
+            kafka_client.SendMesssage(message: "CalculatorController: get product parks");
+
             return Ok(db.ProductParks);
         }
 
         [HttpGet("GetCisternPurposes")]
         public IActionResult GetCisternPurposes()
         {
+            kafka_client.SendMesssage(message: "CalculatorController: get product purposes");
+
             return Ok(db.PurposeCisterns);
         }
 
@@ -131,6 +137,8 @@ namespace BackendOfSite.Controllers
             {
                 resultCisternPurposes = db.StandartSludges.Where(x => x.SulfuricHour > 0).Select(x => x.PurposeCistern).ToList();
             }
+
+            kafka_client.SendMesssage(message: "CalculatorController: get cistern purpose for oil type");
 
             return Ok(resultCisternPurposes);
         }

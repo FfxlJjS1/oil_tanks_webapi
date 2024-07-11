@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Confluent.Kafka;
 
-namespace webapi.Kafka
+namespace BackendOfSite.Kafka
 {
     public class KafkaClient
     {

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BackendOfSite.Kafka;
 
 namespace BackendOfSite.Controllers
 {
@@ -10,6 +11,7 @@ namespace BackendOfSite.Controllers
     public class CisternController : Controller
     {
         private readonly DbCisternContext db;
+        private KafkaClient kafka_client = new KafkaClient("kafka:9092", KafkaClient.KafkaClientType.Producer);
 
         public CisternController(DbCisternContext context)
         {
@@ -19,6 +21,8 @@ namespace BackendOfSite.Controllers
         [HttpGet]
         public IActionResult GetCisternNames()
         {
+            kafka_client.SendMesssage(message: "CisternController: get cistern names");
+
             return Ok(db.Cisterns.Select(row => new
             {
                 Id = row.CisternId,
@@ -78,6 +82,8 @@ namespace BackendOfSite.Controllers
 
             if(foundCistern != null)
             {
+                kafka_client.SendMesssage(message: "CisternController: get cistern characters");
+
                 return Ok(foundCistern);
             }
             else

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections.Generic;
 using System.Security.Cryptography.Xml;
+using BackendOfSite.Kafka;
 
 namespace BackendOfSite.Controllers
 {
@@ -11,6 +12,7 @@ namespace BackendOfSite.Controllers
     public class StructuralAnalysisController : Controller
     {
         readonly string[] formTypes = { "Все", "Цилиндрический", "Параллелепипед" };
+        private KafkaClient kafka_client = new KafkaClient("kafka:9092", KafkaClient.KafkaClientType.Producer);
 
         class Column
         {
@@ -140,6 +142,8 @@ namespace BackendOfSite.Controllers
                 entityTable = entityTable
             };
 
+            kafka_client.SendMesssage(message: "StructuralAnalysisController: got analyse by form volume");
+            
             return Ok(entityResponce);
         }
 
